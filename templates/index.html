@@ -59,6 +59,9 @@
             <li class="<% if (answer.correct) { print('text-success') } else { print('text-danger') } %>">
                 <%= answer.name %>.js
                 is <% if (!answer.isLib) {print('not') } %> a js-lib!
+                <% if (answer.link) { %>
+                (<a href="<%= answer.link %>">Link</a>)
+                <% } %>
             </li>
         <% })%>
     </ul>
