@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>JSlibOrNot?</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>JSlibOrNot?</h1>
+        <p>Is it a JavaScript library or just a word? Are you hipster enough to know?</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-m-d12" id="start_div">
+            <p><a class="btn btn-primary btn-lg" role="button" id="start">Start &raquo;</a></p>
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>By <a href="http://twittwer.com/atlefren">@atlefren</a></p>
+    </footer>
+</div>
+
+
+<script type="text/template" id="question_template">
+    <h2><%= name %>.js</h2>
+
+    <p>Is this a js-lib?</p>
+    <p>
+        <button id="yes" class="btn btn-success">Yes</button>
+        <button id="no" class="btn btn-danger">No</button>
+    </p>
+</script>
+
+<script type="text/template" id="quiz_div_template">
+    <h2>Finished!</h2>
+    <p>Your score is <%= correct %> of <%= num %></p>
+    <ul>
+        <% _.each(answers, function (answer) { %>
+            <li class="<% if (answer.correct) { print('text-success') } else { print('text-danger') } %>">
+                <%= answer.name %>.js
+                is <% if (!answer.isLib) {print('not') } %> a js-lib!
+            </li>
+        <% })%>
+    </ul>
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+<script src="{{ url_for('static', filename='jslibornot.js') }}"></script>
+</body>
+</html>
