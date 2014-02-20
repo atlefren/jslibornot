@@ -104,7 +104,7 @@
         var libs = [
             {'name': "Bacon", 'isLib': true, 'link': 'http://baconjs.github.io/'},
             {'name': "Tiger", 'isLib': true, 'link': 'https://github.com/doublerebel/tiger'},
-            {'name': "Ham", 'isLib': false},
+            {'name': "Ham", 'isLib': true, 'link': 'https://github.com/jameskeane/ham-script'},
             {'name': "Broccoli", 'isLib': true, 'link': 'https://github.com/joliss/broccoli'},
             {'name': "Smårettskinke", 'isLib': false},
             {'name': "Pasta", 'isLib': true, 'link': 'https://github.com/ympbyc/Pasta'},
